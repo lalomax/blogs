@@ -17,8 +17,29 @@ const favoriteBlog = (blogs) => {
   return blogs.reduce((a, b) => (a.likes > b.likes ? a : b))
 }
 
+<<<<<<< HEAD
 module.exports = {
   // dummy,
+=======
+const mostBlogs = (blogs) => {
+  if (blogs.length === 0) {
+    return []
+  }
+  return blogs.reduce((a, b) => {
+    if (a.author === b.author) {
+      a.blogs++
+    } else {
+      a.author = b.author
+      a.blogs = 1
+    }
+    return a
+  }, { author: '', blogs: 0 })
+}
+
+module.exports = {
+  // dummy,
+  mostBlogs,
+>>>>>>> dev
   favoriteBlog,
   totalLikes,
 };
